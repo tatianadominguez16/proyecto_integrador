@@ -15,11 +15,26 @@ def simulador_abonos(numeroAbonnos):
             "id_abonos":random.randint(0,50000),
             "cliente":random.chice(listaNombreClientes),
             "factura":random.choice(listaDeCodigos),
-            "valor abonado":random.randint(10000,500000),
-            "valor restante":random.randint(10000,500000),
+            "valorabonado":random.randint(10000,500000),
+            "valorestante":random.randint(10000,500000),
             "fecha":fechaSimilada.strftime("%Y-%m-%d"),
             "valor deuda":random.randint(10000,500000)
 
         }
+
+        #inyectando errores controlados
+        probabilidadError=random.random()
+        if probabilidadError<0.1:
+            abono["valor abonado"]=None
+        elif probabilidadError<0.2:
+            abono["fecha"]=None
+        elif probabilidadError<0.3:
+            abono["cliente"]=""
+        elif probabilidadError<0.4:
+            abono["valor abonado"]= -5000
+        elif probabilidadError<0.5:
+            abono["valor abonado"]= "cincuenta mil"
+
+
         abonos.append(abono)
     return abonos
