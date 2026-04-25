@@ -1,6 +1,6 @@
 from datetime import datetime,timedelta
 import random
-def simulador_abonos(numeroAbonnos):
+def simulador_abonos(numeroAbonos):
     #semilla de datos 
     listaNombreClientes=["juan","Andres","Maria","Carlos",
     "Andrea","Esteban"]
@@ -13,7 +13,7 @@ def simulador_abonos(numeroAbonnos):
         fechaSimilada=fechaInicial+timedelta(days=random.randint(0,365))
         abono={
             "id_abonos":random.randint(0,50000),
-            "cliente":random.chice(listaNombreClientes),
+            "cliente":random.choice(listaNombreClientes),
             "factura":random.choice(listaDeCodigos),
             "valorabonado":random.randint(10000,500000),
             "valorestante":random.randint(10000,500000),
@@ -25,15 +25,15 @@ def simulador_abonos(numeroAbonnos):
         #inyectando errores controlados
         probabilidadError=random.random()
         if probabilidadError<0.1:
-            abono["valor abonado"]=None
+            abono["valorabonado"]=None
         elif probabilidadError<0.2:
             abono["fecha"]=None
         elif probabilidadError<0.3:
             abono["cliente"]=""
         elif probabilidadError<0.4:
-            abono["valor abonado"]= -5000
+            abono["valorabonado"]= -5000
         elif probabilidadError<0.5:
-            abono["valor abonado"]= "cincuenta mil"
+            abono["valorabonado"]= "cincuenta mil"
 
 
         abonos.append(abono)
