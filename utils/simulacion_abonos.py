@@ -16,9 +16,9 @@ def simulador_abonos(numeroAbonos):
             "cliente":random.choice(listaNombreClientes),
             "factura":random.choice(listaDeCodigos),
             "valorabonado":random.randint(10000,500000),
-            "valorestante":random.randint(10000,500000),
+            "valorrestante":random.randint(10000,500000),
             "fecha":fechaSimilada.strftime("%Y-%m-%d"),
-            "valor deuda":random.randint(10000,500000)
+            "valordeuda":random.randint(10000,500000)
 
         }
 
